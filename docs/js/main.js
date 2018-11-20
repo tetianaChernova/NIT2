@@ -32,6 +32,10 @@
     }, n.o = function (e, t) {
         return Object.prototype.hasOwnProperty.call(e, t)
     }, n.p = "", n(n.s = 0)
-}([function (e, t) {
-    console.log("Hello!"), console.log("The time is ".concat(new Date))
+}([function (e, t, n) {
+    "use strict";
+    n.r(t);
+    n(1);
+    console.log("Hello!"), console.log(`The time is ${new Date}`)
+}, function (e, t, n) {
 }]);
