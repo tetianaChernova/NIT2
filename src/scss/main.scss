@@ -1,3 +1,33 @@
-p{
-  color: red;
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.testModal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  opacity: 1;
+  display: none;
+  background: #DCD0C0;
+  transition: all 0.5s linear;
+
+  &.isActive {
+    display: block;
+    opacity: 1;
+  }
+
+  .over {
+    max-height: 200px;
+    overflow: auto;
+  }
 }

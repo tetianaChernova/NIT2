@@ -1,3 +1,5 @@
-console.log('Hello!');
-console.log(`The time is ${new Date()}`);
+import './css/bootstrap.css';
 import './scss/main.scss';
+import 'bootstrap';
+import './js/getcategory';
+import './js/bin';
