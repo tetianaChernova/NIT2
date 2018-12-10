@@ -3,7 +3,7 @@ import $ from 'jquery';
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-        url: "http://nit.tron.net.ua/api/category/list",
+        url: "https://nit.tron.net.ua/api/category/list",
         success: function (data) {
             buildCategoryList(data);
         },
@@ -30,14 +30,14 @@ $(document).ready(function () {
         console.log("done")
         buildCategory('.js-category-open');
     });
-    getCategory(1);
+    getCategory();
 
     function buildCategoryList(arr) {
         let temp = [];
         let workArray = arr;
         for (let i = 0; i < workArray.length; i++) {
             temp.push(`<div class="list-group-item" data-category-number=${workArray[i]['id']}>
-<a class="js-category-open" href="#">${workArray[i].name}
+<a class="js-category-open" href="#">${workArray[i].name}</a>
 </div>`);
 
         }
@@ -48,14 +48,26 @@ $(document).ready(function () {
         $(openElement).on('click', function (e) {
             e.preventDefault();
             let id = $(this).parents('.list-group-item').attr('data-category-number');
-            getCategory(id);
+            if(id == 1) {
+                getCategory();
+            }
+            else {
+                getCategory(id);
+            }
         });
     }
 
     function getCategory(id) {
+        let url;
+        if(id) {
+            url= `https://nit.tron.net.ua/api/product/list/category/${id}`;
+        }
+        else{
+            url=`https://nit.tron.net.ua/api/product/list`;
+        }
         $.ajax({
             type: "GET",
-            url: `http://nit.tron.net.ua/api/product/list/category/${id}`,
+            url: url,
             success: function (data) {
                 buildProducts(data);
             },
@@ -101,7 +113,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "GET",
-            url: `http://nit.tron.net.ua/api/product/${id}`,
+            url: `https://nit.tron.net.ua/api/product/${id}`,
             success: function (data) {
                 console.dir(data);
                 // buildCategory(data);
@@ -167,7 +179,7 @@ $(document).ready(function () {
             // alert(array);
             let id = $(this).attr("data-product-id");
             console.log(id);
-            if (isExist(array, id)) return;
+            //if (isExist(array, id)) return;
             array.push(id);
             sessionStorage.setItem("myProducts", JSON.stringify(array));
             e.preventDefault();

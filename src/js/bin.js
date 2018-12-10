@@ -11,7 +11,7 @@ function generateItems() {
     for (let i = 0; i < array.length; i++) {
         $.ajax({
             type: "GET",
-            url: `http://nit.tron.net.ua/api/product/${array[i]}`,
+            url: `https://nit.tron.net.ua/api/product/${array[i]}`,
             success: function (data) {
                 $('.tanya').append(
                     `<div class="col-md-3 text-center">
