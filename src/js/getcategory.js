@@ -48,7 +48,7 @@ $(document).ready(function () {
         $(openElement).on('click', function (e) {
             e.preventDefault();
             let id = $(this).parents('.list-group-item').attr('data-category-number');
-            if(id == 1) {
+            if (id == 1) {
                 getCategory();
             }
             else {
@@ -59,11 +59,11 @@ $(document).ready(function () {
 
     function getCategory(id) {
         let url;
-        if(id) {
-            url= `https://nit.tron.net.ua/api/product/list/category/${id}`;
+        if (id) {
+            url = `https://nit.tron.net.ua/api/product/list/category/${id}`;
         }
-        else{
-            url=`https://nit.tron.net.ua/api/product/list`;
+        else {
+            url = `https://nit.tron.net.ua/api/product/list`;
         }
         $.ajax({
             type: "GET",
@@ -116,37 +116,45 @@ $(document).ready(function () {
             url: `https://nit.tron.net.ua/api/product/${id}`,
             success: function (data) {
                 console.dir(data);
-                // buildCategory(data);
+
+                /*let pr = data.price;
+                // pr = "<h5 style='text-decoration: line-through'>" + data.price + "</h5>";
+
+                let special_price=data.special_price;
+                if(data.special_price == null) {
+                    $('#special_price').css('display', 'none');
+                    console.log("hello");
+                }
+                else
+                {
+                    console.log("bye");
+                    //pr = "<h5 style='text-decoration: line-through'>" + data.price + "</h5>";
+                    $('#price').css('text-decoration', 'line-through');
+                }*/
+
+
                 $('.js-modal-body').html(
-                    `<div class="modal-content">
-                <div class="modal-header">
-                    <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
-                    <h3 class="modal-title">${data.name}</h3>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6 product_img">
-                            <img src="${data.image_url}" class="img-responsive" style='width:100%'>
-                        </div>
-                        <div class="col-md-6 product_content">
-                        <div>
-                            <p class="over">${data.description}</p>       
-                            </div>
-                            <h3 class="cost">
-                                <span class="glyphicon glyphicon-usd ${data.special_price ? 'showCost' : 'hideCost'}"></span> 
-                                ${data.special_price}
-                                <small class="pre-cost">
-                                    <span class="glyphicon glyphicon-usd"></span> 
-                                    ${data.price}
-                                </small>
-                            </h3>
-                            <div class="btn-ground button_container">
-                                <button data-product-id =${id} type="button" class="addToBasketBtn btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>`)
+                    '<div class="modal-content">\
+                <div class="modal-header">\
+                    <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>\
+                    <h3 class="modal-title">' +data.name+'</h3>\
+                </div>\
+                <div class="modal-body">\
+                    <div class="row">\
+                        <div class="col-md-6 product_img">\
+                            <img src="'+data.image_url+'" class="img-responsive" style="width:100%">\
+                        </div>\
+                        <div class="col-md-6 product_content">\
+                        <div>\
+                            <p class="over">' + data.description + '</p>\
+                            </div>\
+                            <div class="btn-ground button_container">\
+                                <button data-product-id ="'+id+'" type="button" class="addToBasketBtn btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>\
+                            </div>\
+                        </div>\
+                    </div>\
+                </div>\
+            </div>')
             },
             error: function (jqXHR, exception) {
                 let msg = '';
@@ -174,17 +182,21 @@ $(document).ready(function () {
 
     function addToBasketClick() {
         $(".addToBasketBtn").on('click', function (e) {
+            alert("Added to basket");
             let array = JSON.parse(sessionStorage.getItem("myProducts"));
             array = array == null ? [] : array;
             // alert(array);
             let id = $(this).attr("data-product-id");
             console.log(id);
-            //if (isExist(array, id)) return;
+            if (isExist(array, id)) return;
             array.push(id);
             sessionStorage.setItem("myProducts", JSON.stringify(array));
             e.preventDefault();
-        });
-    }
+        })
+
+    }/*.done(function () {
+        alert("Added to basket");
+    })*/
 
     function isExist(array, id) {
         for (let i = 0; i < array.length; i++) {
@@ -194,28 +206,40 @@ $(document).ready(function () {
     }
 
     function buildProducts(arr) {
+
         let temp = [];
         let workArray = arr;
+        //let cont = $('.container-bla');
         for (let i = 0; i < workArray.length; i++) {
 
-            temp.push(`<div class="col-lg-4 col-md-6 mb-4">
-            <div class="card js-card h-100" data-product-id=${workArray[i]['id']}>
-                <a href="#" class="js-product-open" data-toggle="modal" data-target="#exampleModal"><img class="card-img-top" src="${workArray[i]['image_url']}" alt=""></a>
-                <div class="card-body">
-                    <h4 class="card-title">
-                    <a href="#" class="js-product-open" data-toggle="modal" data-target="#exampleModal">${workArray[i]['name']}</a>
-                    </h4>
-                    <h5>${workArray[i]['price']}</h5>
-                    <p class="card-text" style=" max-height: 500px; overflow-y: scroll">${workArray[i]['description']}</p>
-                </div>
-            </div>
-        </div>`);
-        }
-        $('#all-products').html(temp.join(""));
-    }
+            let pr = "<h5>" + workArray[i]['price'] + "</h5>";
+            pr = "<h5 style='text-decoration: line-through'>" + workArray[i]['price'] + "</h5>";
 
+            let special_price="<h5>" + workArray[i]['special_price']+"</h5>";
+            if(workArray[i]['special_price'] == null) {
+                special_price = "";
+                pr="<h5 style='text-decoration: none'>" + workArray[i]['price'] + "</h5>";
+            }
+
+            temp.push('<div class="col-lg-4 col-md-6 mb-4">\
+            <div class="card js-card h-100" data-product-id="'+workArray[i]['id']+'">\
+                <a href="#" class="js-product-open" data-toggle="modal" data-target="#exampleModal"><img class="card-img-top" src="'+workArray[i]['image_url']+'" alt=""></a>\
+                <div class="card-body">\
+                    <h4 class="card-title">\
+                    <a href="#" class="js-product-open" data-toggle="modal" data-target="#exampleModal">'+workArray[i]['name']+'</a>\
+                    </h4>'
+                + pr + " " + special_price +
+                '<p class="card-text" style=" max-height: 500px; overflow-y: scroll">' +workArray[i]['description'] +'</p>\
+                </div>\
+            </div>\
+        </div>');
+
+
+            $('#all-products').html(temp.join(""));}
+        //$('#all-products').append($product);}
+    }
     $('#myModal').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
+        $('#myInput').trigger('focus');
     })
-})
+});
 
