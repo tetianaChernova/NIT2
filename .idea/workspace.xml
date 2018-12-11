@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86d80208-0923-4092-8de5-72da9044224a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/basket.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/basket.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/bin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/bin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/getcategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/getcategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/main.scss" afterDir="false" />
-    </list>
+    <list default="true" id="86d80208-0923-4092-8de5-72da9044224a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -57,7 +49,7 @@
         <counts>
           <entry key="css" value="110" />
           <entry key="html" value="1051" />
-          <entry key="js" value="4825" />
+          <entry key="js" value="4834" />
           <entry key="json" value="7" />
           <entry key="scss" value="235" />
         </counts>
@@ -67,7 +59,7 @@
           <entry key="CSS" value="110" />
           <entry key="HTML" value="1070" />
           <entry key="JSON" value="7" />
-          <entry key="JavaScript" value="4806" />
+          <entry key="JavaScript" value="4815" />
           <entry key="SCSS" value="235" />
         </counts>
       </usages-collector>
@@ -87,8 +79,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/getcategory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="227" column="29" selection-start-line="227" selection-start-column="29" selection-end-line="227" selection-end-column="29" />
+            <state relative-caret-position="238">
+              <caret line="154" column="27" lean-forward="true" selection-start-line="154" selection-start-column="27" selection-end-line="154" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -153,8 +145,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/bin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="174" column="16" lean-forward="true" selection-start-line="174" selection-start-column="16" selection-end-line="174" selection-end-column="16" />
+            <state relative-caret-position="256">
+              <caret line="170" column="44" selection-start-line="170" selection-start-column="44" selection-end-line="170" selection-end-column="44" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
@@ -356,12 +348,12 @@
       <workItem from="1543255156131" duration="9587000" />
       <workItem from="1543401897376" duration="22373000" />
       <workItem from="1543756133597" duration="609000" />
-      <workItem from="1544453985380" duration="43800000" />
+      <workItem from="1544453985380" duration="44171000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105269000" />
+    <option name="totallyTimeSpent" value="105640000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -542,8 +534,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/bin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="174" column="16" lean-forward="true" selection-start-line="174" selection-start-column="16" selection-end-line="174" selection-end-column="16" />
+        <state relative-caret-position="256">
+          <caret line="170" column="44" selection-start-line="170" selection-start-column="44" selection-end-line="170" selection-end-column="44" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#2;n#!!top" expanded="true" />
@@ -569,8 +561,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/getcategory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="227" column="29" selection-start-line="227" selection-start-column="29" selection-end-line="227" selection-end-column="29" />
+        <state relative-caret-position="238">
+          <caret line="154" column="27" lean-forward="true" selection-start-line="154" selection-start-column="27" selection-end-line="154" selection-end-column="27" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
